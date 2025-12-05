@@ -1,0 +1,120 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct elemento {
+    int valor;
+    struct elemento* proximo;
+} Elemento;
+
+Elemento* topo = NULL;
+
+
+void empilhar(int x) {
+    Elemento* novo = (Elemento*)malloc(sizeof(Elemento));
+    if (!novo) {
+        printf("Falta memoria.\n");
+        return;
+    }
+    novo->valor = x;
+    novo->proximo = topo;
+    topo = novo;
+}
+
+
+int desempilhar() {
+    if (!topo) {
+        printf("Pilha vazia.\n");
+        return -1;
+    }
+    Elemento* temp = topo;
+    int valor = temp->valor;
+    topo = topo->proximo;
+    free(temp);
+    return valor;
+}
+
+
+void mostrar() {
+    if (!topo) {
+        printf("Pilha vazia.\n");
+        return;
+    }
+
+    Elemento* atual = topo;
+    printf("Pilha (topo -> base): ");
+    while (atual) {
+        printf("%d ", atual->valor);
+        atual = atual->proximo;
+    }
+    printf("\n");
+}
+
+
+void ordenar() {
+    if (!topo || !topo->proximo) {
+        printf("Poucos elementos para ordenar.\n");
+        return;
+    }
+
+    Elemento* i = topo;
+
+    while (i != NULL) {
+        Elemento* menor = i;
+        Elemento* j = i->proximo;
+
+        while (j != NULL) {
+            if (j->valor < menor->valor) {
+                menor = j;
+            }
+            j = j->proximo;
+        }
+
+
+        int temp = i->valor;
+        i->valor = menor->valor;
+        menor->valor = temp;
+
+        i = i->proximo;
+    }
+
+    printf("Ordenado com sucesso.\n");
+}
+
+int main() {
+    int opcao, numero;
+
+    while (1) {
+        printf("\n1 - Empilhar\n2 - Desempilhar\n3 - Mostrar\n4 - Ordenar\n5 - Sair\nEscolha: ");
+        scanf("%d", &opcao);
+
+        if (opcao == 1) {
+            printf("Digite um número: ");
+            scanf("%d", &numero);
+            empilhar(numero);
+
+        } else if (opcao == 2) {
+            int removido = desempilhar();
+            if (removido != -1)
+                printf("Removido: %d\n", removido);
+
+        } else if (opcao == 3) {
+            mostrar();
+
+        } else if (opcao == 4) {
+            printf("Antes de ordenar:\n");
+            mostrar();
+            ordenar();
+            printf("Depois de ordenar:\n");
+            mostrar();
+
+        } else if (opcao == 5) {
+            printf("Encerrando.\n");
+            break;
+
+        } else {
+            printf("Opcao invalida.\n");
+        }
+    }
+
+    return 0;
+}
