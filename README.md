@@ -69,12 +69,12 @@ O código pode ser executado por meio do terminal de uma IDE, ou utilizando os c
 
 ### Compilar
 ```bash
-gcc main.c -o pilha
+gcc main.c -o lista
 ```
 
 ### Executar
 ```bash
-./pilha
+./lista
 ```
 
 ---
