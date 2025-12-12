@@ -85,5 +85,5 @@ Este projeto permitiu consolidar os conceitos fundamentais de estruturas de dado
 ---
 
 <p align="center">
-  <img src="https://i.pinimg.com/originals/f0/ae/8b/f0ae8bc86ab9b5459880ea9e8894774d.gif" alt="Cute cat" width="300" />
+  <img src="https://media.tenor.com/iNF_yzfsrcwAAAAM/gato-fofo.gif" alt="Cute cat" width="300" />
 </p>
