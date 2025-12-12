@@ -2,15 +2,9 @@
 
 Trabalho em grupo desenvolvido para a disciplina de **Estrutura de Dados**, com foco na aplicação prática de **lista encadeada**, **pilha** e **algoritmo de ordenação**, utilizando a linguagem **C**.
 
----
-
-# Pilha com Lista Encadeada e Ordenação (Selection Sort)
-
 <p align="center">
-  <img src="https://miro.medium.com/v2/resize:fit:1400/1*tQ9Y11OdaMnhXwbfCF-edA.gif" width="600"/>
+  <img src="https://miro.medium.com/v2/resize:fit:1400/1*tQ9Y11OdaMnhXwbfCF-edA.gif" width="400"/>
 </p>
-
-Trabalho em grupo desenvolvido para a disciplina de **Estrutura de Dados**...
 
 ---
 
